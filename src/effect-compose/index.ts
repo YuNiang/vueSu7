@@ -2,7 +2,7 @@ import { useConfig } from '@/store/config'
 import { IThreeEnvironment } from '@/utils'
 import { ShaderMaterial, Texture, Vector2 } from 'three'
 import { EffectComposer, OutputPass, RenderPass, SMAAPass, ShaderPass, UnrealBloomPass } from 'three/examples/jsm/Addons.js'
-import { uniforms } from 'three/examples/jsm/nodes/Nodes.js'
+// import { uniforms } from 'three/examples/jsm/nodes/Nodes.js'
 import { watchEffect } from 'vue'
 
 export const BLOOM_LAYER = 10

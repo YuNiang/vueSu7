@@ -3,6 +3,7 @@ import { useConfig } from '../store/config'
 
 const config = useConfig()
 const state = config.$state
+console.log(state, 'sss')
 </script>
 <template>
   <div class="container">
@@ -10,15 +11,19 @@ const state = config.$state
       <el-form-item label="envWeight">
         <el-slider v-model="state.envWeight" :min="0" :max="1" :step="0.01" />
       </el-form-item>
+
       <el-form-item label="envIntensity">
         <el-slider v-model="state.envIntensity" :min="0" :max="1" :step="0.01" />
       </el-form-item>
+
       <el-form-item label="showSpeedup">
         <el-checkbox v-model="state.showSpeedUp"></el-checkbox>
       </el-form-item>
+
       <el-form-item label="showCurvature">
         <el-checkbox v-model="state.showCurvature"></el-checkbox>
       </el-form-item>
+
       <el-form-item label="showWindSpeed">
         <el-checkbox v-model="state.showWindSpeed"></el-checkbox>
       </el-form-item>
@@ -30,6 +35,7 @@ const state = config.$state
       <el-form-item label="carColor">
         <el-color-picker v-model="state.color" color-format="rgb"></el-color-picker>
       </el-form-item>
+
     </el-form>
   </div>
 </template>
@@ -41,7 +47,7 @@ const state = config.$state
   right: 5px;
   top: 5px;
   background-color: #fff;
-  padding: 0 4px;
+  padding: 0 12px;
   z-index: 99;
 }
 </style>

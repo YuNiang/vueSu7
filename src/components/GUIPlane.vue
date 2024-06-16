@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import GUI from 'lil-gui'
 import { useConfig } from '../store/config'
 import { useBeforeMount } from '../utils/index'
-import GUI from 'lil-gui'
 
 const config = useConfig()
 const gui = new GUI()

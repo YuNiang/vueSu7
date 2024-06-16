@@ -1,14 +1,11 @@
 import { IThreeEnvironment, createThreeEnvironment, useBeforeMount } from '@/utils'
 import { defineStore } from 'pinia'
-import { computed, ref, shallowRef } from 'vue'
+import { ref } from 'vue'
 import { initRenderEvent } from './update'
 
 export const useInitThreeStage = defineStore('initThreeStage', () => {
-  // const env = shallowRef<IThreeEnvironment>()
-  console.log('init stage')
   let env: IThreeEnvironment | undefined = undefined
   let observer: ResizeObserver | undefined
-  // const isCreated = computed(() => !!env.value)
   const isCreated = ref(false)
 
   const { registerResize } = initRenderEvent()
@@ -47,8 +44,6 @@ export const useInitThreeStage = defineStore('initThreeStage', () => {
       const { clientWidth, clientHeight } = dom
       const pixelRatio = window.devicePixelRatio
 
-      // const width = clientWidth * pixelRatio
-      // const height = clientHeight * pixelRatio
       e.camera.aspect = clientWidth / clientHeight
       e.camera.updateProjectionMatrix()
       e.renderer.setSize(clientWidth, clientHeight)
@@ -86,7 +81,6 @@ export const useThreeRender = (initFunc: (env: IThreeEnvironment) => Func | void
   const stage = useInitThreeStage()
 
   useBeforeMount(() => {
-    // if (!stage._env) return
     const env = stage.getEnv()
     if (!env) return
 

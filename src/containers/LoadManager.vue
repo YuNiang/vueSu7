@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { checkNever, useMounted, errorMessage } from '../utils'
-import { reactive, computed, watchEffect } from 'vue'
+import { reactive, computed } from 'vue'
 import { MathUtils, PMREMGenerator } from 'three'
+import { checkNever, useMounted, errorMessage } from '../utils'
 import { toLoadGltfFile, toLoadTexture, toLoadHdr } from '../lib/three-common'
 import { setItem } from '../utils/res'
 import { RES_LIST } from '../constants'
 import { getThreeEnv } from '@/store/three'
 import LoadAnimation from '../components/LoadAnimation.vue'
+
 const env = getThreeEnv()
 const resList = reactive(RES_LIST)
 
@@ -28,7 +29,7 @@ const progressNumber = computed(() => {
 })
 
 useMounted(() => {
-  const r = new PMREMGenerator(env.renderer)
+  // const r = new PMREMGenerator(env.renderer)
   resList.forEach(res => {
     const type = res.type
 

@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { computed, reactive } from 'vue'
 
 export const useConfig = defineStore('config', {
   state: () => {
@@ -40,6 +39,7 @@ export const useConfig = defineStore('config', {
     lightColor: state => {
       return Math.min(state.envWeight, 1)
     },
+    
     lightStrength: state => {
       const strength = Math.max(Math.min(Math.pow(state.envIntensity, 2) * state.envWeight, 0.6), 0.3)
       return strength

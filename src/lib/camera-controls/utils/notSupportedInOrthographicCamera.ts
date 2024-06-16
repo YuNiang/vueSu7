@@ -7,12 +7,9 @@ export function notSupportedInOrthographicCamera(
 ): camera is _THREE.OrthographicCamera {
 
 	if ( isOrthographicCamera( camera ) ) {
-
 		console.warn( `${ message } is not supported in OrthographicCamera` );
 		return true;
-
 	}
 
 	return false;
-
 }
